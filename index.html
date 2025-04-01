@@ -94,7 +94,7 @@
         </Section>
 
         <!-- Sobre nós -->
-        <section class="container mt-5 mb-5">
+        <section class="container mt-5 mb-5" id="sobre">
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-center align-items-center">
                     <img src="assets/logo-square.png" class="logo-square" alt="">
@@ -112,13 +112,184 @@
         </section>
 
         <!-- Produto -->
-        <section class="container">
+        <section class="container" id="produto">
             <div class="d-flex justify-content-center align-items-center flex-column">
                 <h1>Nosso Produto</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
                 <button class="btn btn-brown" style="background-color: #8B4513; color: white;">Saiba Mais</button>
             </div>
+            <div>
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <a href="assets/produto1.png" data-bs-toggle="modal" data-bs-target="#lightboxModal1">
+                            <img src="assets/1.png" class="img-fluid rounded" alt="Produto 1">
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="assets/produto2.png" data-bs-toggle="modal" data-bs-target="#lightboxModal2">
+                            <img src="assets/2.png" class="img-fluid rounded" alt="Produto 2">
+                        </a>
+                    </div>
 
+                </div>
+
+                <!-- Lightbox Modals -->
+                <div class="modal fade" id="lightboxModal1" tabindex="-1" aria-labelledby="lightboxModal1Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="assets/1.png" class="img-fluid" alt="Produto 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="lightboxModal2" tabindex="-1" aria-labelledby="lightboxModal2Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="assets/2.png" class="img-fluid" alt="Produto 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipe -->
+        <Section class="container mt-5" id="equipe">
+            <div class="row">
+                <div class="col-md-6 d-flex flex-column justify-content-center align-items-start">
+                    <h1>Conheça a Equipe!</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+                    <button class="btn btn-brown" style="background-color: #8B4513; color: white;">Saiba Mais</button>
+                </div>
+                <div class="col-md-6">
+                    <!-- Grid de Cards -->
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
+
+        <!-- Agenda -->
+
+        <Section class="container mt-5" id="agenda">
+            <div class="row bg-beige rounded p-4" style="background-color: #F5F5DC;">
+                <div class="col-md-5">
+                    <img src="assets/canjica.png" class="img-fluid" alt="Agenda">
+                </div>
+                <div class="col-md-7">
+                    <h1>Proximos eventos</h1>
+                    <p>Conteúdo da segunda coluna.</p>
+                </div>
+            </div>
+        </Section>
+
+        <!-- Testemunhos -->
+        <section class="container mt-5" id="testemunho">
+            <div class="col d-flex flex-column justify-content-center align-items-center">
+                <h1>O que dizem sobre nós?</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p>
+                <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in
+                                    to additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
