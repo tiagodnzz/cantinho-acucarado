@@ -1,10 +1,71 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 2em;
+}
+
+section {
+    scroll-margin-top: 8em;
+}
+
+/* Botao WhatsApp */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 1px 1px 2px #888;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+    line-height: 0;
+    cursor: pointer;
+}
+
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 8px #666;
+}
+
+/* Animação WhatsApp */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 .logo-square {
     width: 500px;
     height: 500px;
 }
 
 #map {
-    height: 400px; /* Altura do mapa */
-    width: 100%; /* Ocupar toda a largura disponível */
+    height: 400px;
+    /* Altura do mapa */
+    width: 100%;
+    /* Ocupar toda a largura disponível */
     max-width: 100%;
 }
