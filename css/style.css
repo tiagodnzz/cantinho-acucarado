@@ -2,3 +2,9 @@
     width: 500px;
     height: 500px;
 }
+
+#map {
+    height: 400px; /* Altura do mapa */
+    width: 100%; /* Ocupar toda a largura disponível */
+    max-width: 100%;
+}
