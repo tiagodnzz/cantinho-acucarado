@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const scrollY = window.pageYOffset;
 
         sections.forEach((section) => {
-            const sectionTop = section.offsetTop -200; // ajuste por causa do navbar
+            const sectionTop = section.offsetTop -130; // ajuste por causa do navbar
             const sectionHeight = section.offsetHeight;
 
             if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
