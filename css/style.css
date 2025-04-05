@@ -89,10 +89,6 @@ section {
 
 
 /* Geral */
-.logo-square {
-    width: 500px;
-    height: 500px;
-}
 
 /* Esquema de Cores */
 .bg-dark-brown {
@@ -158,6 +154,17 @@ section {
 
 .gap-vertical {
     gap: 1rem;
+}
+
+.logo-square {
+    width: 500px;
+    height: 500px;
+}
+
+.person{
+    width: 100px;
+    height: 100px; 
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {
