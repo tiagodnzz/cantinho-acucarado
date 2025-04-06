@@ -9,4 +9,4 @@ const firebaseConfig = {
 
 // Inicializa Firebase e exporta o banco
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+window.db = firebase.firestore();

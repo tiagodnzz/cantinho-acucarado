@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     botaoWpp.target = '_blank';
     botaoWpp.setAttribute('aria-label', 'Fale conosco no WhatsApp');
 
-    botaoWpp.innerHTML = `<i class="fa fa-whatsapp"></i>`;
+    botaoWpp.innerHTML = `<i class="fa-brands fa-whatsapp"></i>`;
 
     document.body.appendChild(botaoWpp);
 });

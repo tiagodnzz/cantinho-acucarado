@@ -161,11 +161,150 @@ section {
     height: 500px;
 }
 
-.person{
+.person {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     object-fit: cover;
 }
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+/* Notificacao */
+/* Toast container */
+#customToast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #198754;
+    /* default: success */
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 250px;
+    max-width: 90vw;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-30px);
+    transition: all 0.4s ease;
+    font-family: Arial, sans-serif;
+}
+
+/* Show class */
+#customToast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Toast content */
+.toast-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    position: relative;
+}
+
+/* Icon */
+.toast-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Message */
+#toastMessage {
+    flex: 1;
+    font-size: 16px;
+}
+
+/* Close button */
+.toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+}
+
+.toast-close:hover {
+    opacity: 0.8;
+}
+
+/* Linha de tempo */
+.toast-timer {
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    animation: shrinkTimer 4s linear forwards;
+    border-radius: 0 0 8px 8px;
+}
+
+button.disabled {
+    pointer-events: auto;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* Animação da barra */
+@keyframes shrinkTimer {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+/* Cores por tipo (caso queira sobrescrever via classe também) */
+.toast-success {
+    background-color: #198754;
+}
+
+.toast-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.toast-danger {
+    background-color: #dc3545;
+}
+
+.toast-info {
+    background-color: #0dcaf0;
+    color: #212529;
+}
+
+
+
+
 
 @media (max-width: 768px) {
     .match-height {

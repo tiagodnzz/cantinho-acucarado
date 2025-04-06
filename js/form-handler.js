@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const estrelas = document.querySelectorAll("#avaliacaoEstrelas i");
     const termosCheckbox = document.getElementById("termos");
     const btnConcordar = document.getElementById("concordarBtn");
+    const btnEnviar = document.getElementById("btnEnviar");
 
     const labelMensagem = document.querySelector("label[for='mensagem']");
     const inputMensagem = document.getElementById("mensagem");
 
-    let tipoSelecionado = "mensagem"; // padrão
-    let notaSelecionada = 0; // começa sem nenhuma estrela
+    let tipoSelecionado = "mensagem";
+    let notaSelecionada = 0;
 
-    // Atualiza o tipo do formulário
     function atualizarTipo(tipo) {
         tipoSelecionado = tipo;
 
@@ -31,14 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarEstrelas(notaSelecionada);
     }
 
-    // Clique nos botões "Mensagem" / "Avaliação"
     tipoBtns.forEach(btn => {
         btn.addEventListener("click", () => {
             atualizarTipo(btn.dataset.tipo);
         });
     });
 
-    // Atualiza visual das estrelas
     function atualizarEstrelas(nota) {
         estrelas.forEach((estrela, index) => {
             estrela.classList.toggle("bi-star-fill", index < nota);
@@ -46,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Estrelas: clique e hover
     estrelas.forEach((estrela, index) => {
         estrela.addEventListener("click", () => {
             notaSelecionada = index + 1;
@@ -62,52 +59,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Concordar com termos (ativa checkbox)
     btnConcordar.addEventListener("click", () => {
         termosCheckbox.checked = true;
         const modal = bootstrap.Modal.getInstance(document.getElementById("modalTermos"));
         modal.hide();
     });
 
-    // Envio do formulário
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    // BOTÃO DE ENVIO - ATIVADO OU NÃO
+    btnEnviar.addEventListener("click", async (e) => {
+        if (!termosCheckbox.checked) {
+            showCustomToast("Você precisa aceitar os termos para continuar.", "warning");
+            return;
+        }
 
+        // Pega os dados do formulário
         const nome = document.getElementById("name").value.trim();
         const email = document.getElementById("email").value.trim();
         const mensagem = inputMensagem.value.trim();
 
-        if (!nome || !email || !mensagem) {
-            showToast("Preencha todos os campos!", "warning");
-            return;
-        }
-
-        if (!termosCheckbox.checked) {
-            showToast("Você precisa concordar com os termos para enviar.", "warning");
-            return;
-        }
-
-        if (tipoSelecionado === "avaliacao" && notaSelecionada === 0) {
-            showToast("Selecione uma nota de 1 a 5 estrelas.", "warning");
-            return;
-        }
-
         const dados = {
             nome,
             email,
+            mensagem,
             data: new Date()
         };
 
         if (tipoSelecionado === "avaliacao") {
-            dados.avaliacao = mensagem;
             dados.nota = notaSelecionada;
-        } else {
-            dados.mensagem = mensagem;
         }
 
+        const colecoes = {
+            mensagem: "mensagens",
+            avaliacao: "avaliacoes"
+        };
+
         try {
-            await db.collection(tipoSelecionado + "s").add(dados);
-            showToast("Formulário enviado com sucesso!", "success");
+            console.log("Enviando para coleção:", colecoes[tipoSelecionado]);
+            console.log("Dados:", dados);
+
+            await db.collection(colecoes[tipoSelecionado]).add(dados);
+
+            showCustomToast("Formulário enviado com sucesso!", "success");
+
             form.reset();
             termosCheckbox.checked = false;
             notaSelecionada = 0;
@@ -115,19 +108,47 @@ document.addEventListener("DOMContentLoaded", () => {
             atualizarEstrelas(notaSelecionada);
         } catch (error) {
             console.error("Erro ao enviar:", error);
-            showToast("Erro ao enviar. Tente novamente.", "danger");
+            showCustomToast("Erro ao enviar!", "danger");
         }
     });
 });
 
-// Função de exibição do Toast
-function showToast(mensagem, tipo = "success") {
-    const toastEl = document.getElementById("formToast");
-    const toastBody = document.getElementById("formToastBody");
+// TOAST PERSONALIZADO
+function showCustomToast(message, type = "success") {
+    const toast = document.getElementById("customToast");
+    const toastMessage = document.getElementById("toastMessage");
+    const icon = document.getElementById("toastIcon");
+    const timerBar = document.getElementById("toastTimer");
 
-    toastBody.innerText = mensagem;
-    toastEl.className = `toast align-items-center text-bg-${tipo} border-0 position-fixed top-0 end-0 m-3`;
+    const icons = {
+        success: "fa-check-circle",
+        warning: "fa-exclamation-triangle",
+        danger: "fa-times-circle",
+        info: "fa-info-circle"
+    };
 
-    const toast = new bootstrap.Toast(toastEl);
-    toast.show();
+    const bgColors = {
+        success: "#198754",
+        warning: "#ffc107",
+        danger: "#dc3545",
+        info: "#0dcaf0"
+    };
+
+    // Atualiza conteúdo
+    toastMessage.textContent = message;
+    toast.style.backgroundColor = bgColors[type] || "#198754";
+    icon.className = `toast-icon fa ${icons[type] || icons.success}`;
+
+    // Reinicia a animação da barra
+    timerBar.style.animation = "none";
+    void timerBar.offsetWidth;
+    timerBar.style.animation = "shrinkTimer 4s linear forwards";
+
+    // Mostra o toast
+    toast.classList.add("show");
+
+    // Esconde depois de 4 segundos
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4000);
 }
