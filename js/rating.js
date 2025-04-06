@@ -18,24 +18,24 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const card = `
                 <div class="swiper-slide">
-                    <div class="card p-3 shadow-sm" style="max-width: 400px;">
-                        <div class="d-flex align-items-center mb-2">
-                            <div class="avatar-circle" style="background-color: ${cor};">
-                                ${iniciais}
-                            </div>
-                            <div>
-                                <h6 class="mb-0">${nome}</h6>
-                                <div>${estrelasHtml}</div>
-                            </div>
+                    <div class="card border-0 p-3 d-flex flex-column h-100 text-start" style="max-width: 400px;">
+                        <div class="mb-2">
+                            ${estrelasHtml}
                         </div>
-                        <p class="mb-0 text-muted">${mensagem}</p>
+
+                        <p class="fw-bold flex-grow-1 mb-3">"${mensagem}"</p>
+
+                        <div class="avatar-circle mb-2" style="background-color: ${cor}; width: 50px; height: 50px; font-size: 1.2rem;">
+                            ${iniciais}
+                        </div>
+                        <h6 class="mb-0">${nome}</h6>
                     </div>
                 </div>
             `;
             container.innerHTML += card;
         });
 
-        // Inicializa o Swiper após adicionar os cards
+        // Inicializa o Swiper
         new Swiper(".mySwiper", {
             loop: true,
             autoplay: {
