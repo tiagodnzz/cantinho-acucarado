@@ -10,6 +10,10 @@ section {
     scroll-margin-top: 8em;
 }
 
+.logo{
+    height: 70px;
+}
+
 /* Estilo Map */
 #map {
     height: 400px;
@@ -337,18 +341,6 @@ button.disabled {
     cursor: not-allowed;
 }
 
-
-/* Animação da barra */
-@keyframes shrinkTimer {
-    from {
-        width: 100%;
-    }
-
-    to {
-        width: 0%;
-    }
-}
-
 /* Cores por tipo (caso queira sobrescrever via classe também) */
 .toast-success {
     background-color: #198754;
@@ -368,13 +360,14 @@ button.disabled {
     color: #212529;
 }
 
+/* Animação da barra */
+@keyframes shrinkTimer {
+    from {
+        width: 100%;
+    }
 
-
-
-
-@media (max-width: 768px) {
-    .match-height {
-        height: auto !important;
+    to {
+        width: 0%;
     }
 }
 
@@ -392,3 +385,16 @@ button.disabled {
         transform: scale(1);
     }
 }
+
+@media (max-width: 380px) {
+    .logo{
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .match-height {
+        height: auto !important;
+    }
+}
+

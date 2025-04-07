@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <div class="mb-2">
                         ${estrelasHtml}
                         </div>
-                        <p class=" flex-grow-1 mb-3">"${mensagem}"</p>
+                        <p class="fst-italic flex-grow-1 mb-3">"${mensagem}"</p>
                         <h6 class="fw-bold mb-0">${nome}</h6>
 
                     </div>
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             slidesPerView: 2,
             spaceBetween: 20,
             breakpoints: {
-                768: { slidesPerView: 2 },   // tablets
+                768: { slidesPerView: 3 },   // tablets
                 992: { slidesPerView: 3 },   // laptops médios
                 1200: { slidesPerView: 4 }   // desktops grandes
             }
