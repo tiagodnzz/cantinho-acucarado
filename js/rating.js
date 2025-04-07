@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 el: ".swiper-pagination",
                 clickable: true,
             },
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 20,
             breakpoints: {
                 768: { slidesPerView: 2 },   // tablets

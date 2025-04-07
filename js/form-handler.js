@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tipoSelecionado = tipo;
 
         tipoBtns.forEach(btn => {
-            btn.classList.toggle("active", btn.dataset.tipo === tipo);
+            btn.classList.toggle("ativo", btn.dataset.tipo === tipo);
         });
 
         if (tipo === "avaliacao") {
@@ -65,17 +65,35 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.hide();
     });
 
-    // BOTÃO DE ENVIO - ATIVADO OU NÃO
+    function validarEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
     btnEnviar.addEventListener("click", async (e) => {
+        const nome = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensagem = inputMensagem.value.trim();
+
+        if (!nome || !email || !mensagem) {
+            showCustomToast("Preencha todos os campos obrigatórios.", "warning");
+            return;
+        }
+
+        if (!validarEmail(email)) {
+            showCustomToast("Digite um email válido.", "warning");
+            return;
+        }
+
+        if (tipoSelecionado === "avaliacao" && notaSelecionada === 0) {
+            showCustomToast("Selecione uma nota para sua avaliação.", "warning");
+            return;
+        }
+
         if (!termosCheckbox.checked) {
             showCustomToast("Você precisa aceitar os termos para continuar.", "warning");
             return;
         }
-
-        // Pega os dados do formulário
-        const nome = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const mensagem = inputMensagem.value.trim();
 
         const dados = {
             nome,
@@ -134,20 +152,16 @@ function showCustomToast(message, type = "success") {
         info: "#0dcaf0"
     };
 
-    // Atualiza conteúdo
     toastMessage.textContent = message;
     toast.style.backgroundColor = bgColors[type] || "#198754";
     icon.className = `toast-icon fa ${icons[type] || icons.success}`;
 
-    // Reinicia a animação da barra
     timerBar.style.animation = "none";
     void timerBar.offsetWidth;
     timerBar.style.animation = "shrinkTimer 4s linear forwards";
 
-    // Mostra o toast
     toast.classList.add("show");
 
-    // Esconde depois de 4 segundos
     setTimeout(() => {
         toast.classList.remove("show");
     }, 4000);

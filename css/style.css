@@ -127,6 +127,73 @@ section {
     color: #a67f69 !important;
 }
 
+/* Estilo base para todos os botões */
+.btn-tipo {
+    border: 1px solid;
+    background-color: transparent;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Inativos - fundo transparente, texto e borda coloridos */
+.btn-dark-brown:not(.ativo) {
+    color: #402116;
+    border-color: #402116;
+    background-color: transparent;
+}
+
+.btn-ligth-brown:not(.ativo) {
+    color: #734e3a;
+    border-color: #734e3a;
+    background-color: transparent;
+}
+
+.btn-dark-beige:not(.ativo) {
+    color: #ba865b;
+    border-color: #ba865b;
+    background-color: transparent;
+}
+
+.btn-ligth-beige:not(.ativo) {
+    color: #a67f69;
+    border-color: #a67f69;
+    background-color: transparent;
+}
+
+/* Ativos - fundo colorido, texto branco */
+.btn-dark-brown.ativo {
+    background-color: #402116;
+    color: #fff;
+    border-color: #402116;
+}
+
+.btn-ligth-brown.ativo {
+    background-color: #734e3a;
+    color: #fff;
+    border-color: #734e3a;
+}
+
+.btn-dark-beige.ativo {
+    background-color: #ba865b;
+    color: #fff;
+    border-color: #ba865b;
+}
+
+.btn-ligth-beige.ativo {
+    background-color: #a67f69;
+    color: #fff;
+    border-color: #a67f69;
+}
+
+/* Hover - escurece levemente SEM remover fundo nem borda */
+.btn-tipo:hover {
+    filter: brightness(0.95);
+}
+
+
+
 .image-wrapper {
     position: relative;
     width: 100%;
