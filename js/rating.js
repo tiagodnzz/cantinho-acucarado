@@ -18,17 +18,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             const card = `
                 <div class="swiper-slide">
-                    <div class="card border-0 p-3 d-flex flex-column h-100 text-start" style="max-width: 400px;">
+                    <div class="card border-0 p-3 d-flex flex-column h-100 text-center" style="max-width: 400px;">
+                        <div class="avatar-circle mx-auto mb-2" style="background-color: ${cor}; width: 50px; height: 50px; font-size: 1.2rem;">
+                        ${iniciais}
+                        </div>
+                        
                         <div class="mb-2">
-                            ${estrelasHtml}
+                        ${estrelasHtml}
                         </div>
+                        <p class=" flex-grow-1 mb-3">"${mensagem}"</p>
+                        <h6 class="fw-bold mb-0">${nome}</h6>
 
-                        <p class="fw-bold flex-grow-1 mb-3">"${mensagem}"</p>
-
-                        <div class="avatar-circle mb-2" style="background-color: ${cor}; width: 50px; height: 50px; font-size: 1.2rem;">
-                            ${iniciais}
-                        </div>
-                        <h6 class="mb-0">${nome}</h6>
                     </div>
                 </div>
             `;
@@ -49,8 +49,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             slidesPerView: 1,
             spaceBetween: 20,
             breakpoints: {
-                768: { slidesPerView: 2 },
-                992: { slidesPerView: 3 }
+                768: { slidesPerView: 2 },   // tablets
+                992: { slidesPerView: 3 },   // laptops médios
+                1200: { slidesPerView: 4 }   // desktops grandes
             }
         });
 
