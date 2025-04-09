@@ -2,16 +2,13 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    padding-top: 2em;
-}
-
 section {
     scroll-margin-top: 8em;
 }
 
-.logo{
-    height: 70px;
+
+#inicio {
+    height: 100vh !important;
 }
 
 /* Estilo Map */
@@ -21,6 +18,19 @@ section {
     width: 100%;
     /* Ocupar toda a largura disponível */
     max-width: 100%;
+}
+
+.video-wrapper video {
+    object-fit: cover !important;
+    height: 100vh !important;
+}
+
+.logo {
+    height: 70px;
+}
+
+.margin-title-top {
+    margin-top: 3em !important;
 }
 
 /* Botao WhatsApp */
@@ -397,7 +407,7 @@ button.disabled {
 }
 
 @media (max-width: 380px) {
-    .logo{
+    .logo {
         height: 50px;
     }
 }
@@ -407,4 +417,3 @@ button.disabled {
         height: auto !important;
     }
 }
-
