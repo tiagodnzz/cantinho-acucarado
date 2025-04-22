@@ -380,6 +380,46 @@ button.disabled {
     color: #212529;
 }
 
+/* Estilos para o swiper-mvv */
+.swiper-mvv {
+    padding: 20px 0;
+}
+
+.swiper-mvv .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-mvv .icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cor das bolinhas de paginação */
+.swiper-pagination-bullet {
+    background-color: #ff5733; /* Cor laranja */
+}
+
+/* Cor das bolinhas de paginação ao passar o mouse */
+.swiper-pagination-bullet:hover {
+    background-color: #734e3a; /* Cor laranja mais escura */
+}
+
+/* Cor da bolinha ativa */
+.swiper-pagination-bullet-active {
+    background-color: #ba865b !important; /* Cor azul para a bolinha ativa */
+}
+
+.justify{
+    text-align: justify !important;
+}
+
 /* Animação da barra */
 @keyframes shrinkTimer {
     from {
