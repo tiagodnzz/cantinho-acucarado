@@ -8,14 +8,14 @@ var swiperMvv = new Swiper('.swiper-mvv', {
     slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
         clickable: true,
     },
+    slidesPerView: 2,
+    spaceBetween: 20,
     breakpoints: {
-        // quando a largura da janela é >= 768px
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 20
-        }
+        768: { slidesPerView: 2 },   // tablets
+        992: { slidesPerView: 2 },   // laptops médios
+        1200: { slidesPerView: 1 }   // desktops grandes
     }
 });
