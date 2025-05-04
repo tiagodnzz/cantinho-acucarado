@@ -110,7 +110,7 @@ section {
     background-color: #402116 !important;
 }
 
-.bg-ligth-brown {
+.bg-light-brown {
     color: #FFF !important;
     background-color: #734e3a !important;
 }
@@ -120,16 +120,21 @@ section {
     background-color: #ba865b !important;
 }
 
-.bg-ligth-beige {
+.bg-light-beige {
     color: #FFF !important;
     background-color: #a67f69 !important;
+}
+
+.bg-light{
+    background-color: #F4D8A8 !important;
+    color: #402116 !important;
 }
 
 .dark-brown {
     color: #402116 !important;
 }
 
-.ligth-brown {
+.light-brown {
     color: #734e3a !important;
 }
 
@@ -137,7 +142,7 @@ section {
     color: #ba865b !important;
 }
 
-.ligth-beige {
+.light-beige {
     color: #a67f69 !important;
 }
 
@@ -158,7 +163,7 @@ section {
     background-color: transparent;
 }
 
-.btn-ligth-brown:not(.ativo) {
+.btn-light-brown:not(.ativo) {
     color: #734e3a;
     border-color: #734e3a;
     background-color: transparent;
@@ -170,7 +175,7 @@ section {
     background-color: transparent;
 }
 
-.btn-ligth-beige:not(.ativo) {
+.btn-light-beige:not(.ativo) {
     color: #a67f69;
     border-color: #a67f69;
     background-color: transparent;
@@ -183,7 +188,7 @@ section {
     border-color: #402116;
 }
 
-.btn-ligth-brown.ativo {
+.btn-light-brown.ativo {
     background-color: #734e3a;
     color: #fff;
     border-color: #734e3a;
@@ -195,7 +200,7 @@ section {
     border-color: #ba865b;
 }
 
-.btn-ligth-beige.ativo {
+.btn-light-beige.ativo {
     background-color: #a67f69;
     color: #fff;
     border-color: #a67f69;
@@ -403,21 +408,54 @@ button.disabled {
 
 /* Cor das bolinhas de paginação */
 .swiper-pagination-bullet {
-    background-color: #ff5733; /* Cor laranja */
+    background-color: #ff5733;
+    /* Cor laranja */
 }
 
 /* Cor das bolinhas de paginação ao passar o mouse */
 .swiper-pagination-bullet:hover {
-    background-color: #734e3a; /* Cor laranja mais escura */
+    background-color: #734e3a;
+    /* Cor laranja mais escura */
 }
 
 /* Cor da bolinha ativa */
 .swiper-pagination-bullet-active {
-    background-color: #ba865b !important; /* Cor azul para a bolinha ativa */
+    background-color: #ba865b !important;
+    /* Cor azul para a bolinha ativa */
 }
 
-.justify{
+.justify {
     text-align: justify !important;
+}
+
+.btn-retorno {
+    border: 2px solid #ba865b;
+    color: #ba865b;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-retorno:hover {
+    background-color: #ba865b;
+    color: #fff;
+}
+
+.mensagem-erro h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.mensagem-erro p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.min-height-100 {
+    min-height: 100vh !important;
 }
 
 /* Animação da barra */
@@ -455,5 +493,10 @@ button.disabled {
 @media (max-width: 768px) {
     .match-height {
         height: auto !important;
+    }
+
+    .imagem-erro {
+        text-align: center;
+        margin-bottom: 2rem;
     }
 }

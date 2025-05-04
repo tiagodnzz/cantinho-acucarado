@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cores = ["#007bff", "#6f42c1", "#d63384", "#fd7e14", "#20c997", "#198754"];
 
     try {
-        const snapshot = await db.collection("avaliacoes").orderBy("data", "desc").get();
+        const snapshot = await db.collection("reviews").orderBy("data", "desc").get();
 
         snapshot.forEach(doc => {
             const { nome, mensagem, nota } = doc.data();

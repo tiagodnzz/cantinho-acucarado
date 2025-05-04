@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const colecoes = {
-            mensagem: "mensagens",
-            avaliacao: "avaliacoes"
+            mensagem: "messages",
+            avaliacao: "reviews"
         };
 
         try {
