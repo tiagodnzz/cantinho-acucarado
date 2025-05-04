@@ -698,34 +698,38 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="fixed-bottom bg-light p-3 text-center z-index-fixed" style="display: none;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <p class="mb-md-0">
-                        <small>Este site usa cookies para melhorar sua experiência de navegação e para fins de
-                            análise. Você consente com o uso de cookies?</small>
-                    </p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <button id="accept-cookies-btn" class="btn btn-success btn-sm me-2">Concordo</button>
-                    <button id="reject-cookies-btn" class="btn btn-danger btn-sm">Discordo</button>
+    <!-- Overlay para bloquear a página -->
+    <!-- Overlay para bloquear interação -->
+        <div id="cookie-overlay"></div>
+
+        <div id="cookie-banner" class="fixed-bottom bg-light p-4 text-center z-index-fixed" style="display: none; z-index: 1050;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="mb-md-0">
+                            <small>Este site usa cookies para melhorar sua experiência de navegação e para fins de
+                                análise. Você permite uso de cookies?</small>
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <button id="reject-cookies-btn" class="btn btn-outline-danger btn-sm">Não Permito</button>
+                        <button id="accept-cookies-btn" class="btn btn-success btn-sm me-2">Sim, Permito</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Notificacao -->
-    <div id="customToast">
-        <div class="toast-content">
-            <i class="toast-icon fa fa-check-circle" id="toastIcon"></i>
-            <span id="toastMessage">Mensagem de sucesso</span>
-            <button class="toast-close" id="toastCloseBtn" aria-label="Fechar">
-                <i class="fa fa-times"></i>
-            </button>
+        <!-- Notificacao -->
+        <div id="customToast">
+            <div class="toast-content">
+                <i class="toast-icon fa fa-check-circle" id="toastIcon"></i>
+                <span id="toastMessage">Mensagem de sucesso</span>
+                <button class="toast-close" id="toastCloseBtn" aria-label="Fechar">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="toast-timer" id="toastTimer"></div>
         </div>
-        <div class="toast-timer" id="toastTimer"></div>
-    </div>
 
 </body>
 

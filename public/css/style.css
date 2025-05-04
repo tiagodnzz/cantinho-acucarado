@@ -20,6 +20,18 @@ section {
     max-width: 100%;
 }
 
+#cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1040;
+    display: none;
+
+}
+
 .video-wrapper video {
     object-fit: cover !important;
     height: 100vh !important;
@@ -125,7 +137,7 @@ section {
     background-color: #a67f69 !important;
 }
 
-.bg-light{
+.bg-light {
     background-color: #F4D8A8 !important;
     color: #402116 !important;
 }
