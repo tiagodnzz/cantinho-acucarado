@@ -51,14 +51,14 @@ auth.onAuthStateChanged((user) => {
         // Se estiver na página de login -> vai pro dashboard
         if (isLoginPage) {
             console.log("Logado, redirecionando do login para o dashboard...");
-            window.location.href = 'dashboard.html';
+            window.location.href = '../admin/dashboard.html';
         }
     } else {
         // Usuário NÃO LOGADO
         // Se estiver em alguma página admin protegida (dashboard) -> vai pro login
         if (isDashboardPage) { // Adicione outras páginas protegidas aqui com ||
             console.log("Não logado, redirecionando do dashboard para o login...");
-            window.location.href = 'login.html';
+            window.location.href = '../auth/login.html';
         }
     }
 });
