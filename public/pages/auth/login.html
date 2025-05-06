@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Administrativo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/auth.css">
+
+    <!-- Firebase SDKs compat -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+    <!-- Seus scripts -->
+    <script src="../../assets/js/core/firebase/firebase-config.js" defer></script>
+    <script src="../../assets/js/core/auth/firebase-auth.js" defer></script>
+</head>
+
+<body class="shadow d-flex flex-column align-items-center justify-content-center vh-100">
+
+    <img src="../../assets/imgs/logo.png" alt="Logo Cantinho Açucarado" class="logo-img mb-5" />
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="row login-card bg-white w-100">
+            <!-- Formulário -->
+            <div class="col-md-6 left-panel">
+                <h3 class="mb-4">Acessar Painel</h3>
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" placeholder="Sua E-mail" id="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" placeholder="Sua Senha" id="password" class="form-control" required>
+                    </div>
+                    <div id="login-error" class="text-danger small mb-3"></div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" />
+                        <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+                    </div>
+                    <button type="submit" class="btn btn-login w-100 mb-3">Entrar</button>
+                </form>
+
+
+            </div>
+
+            <!-- Painel direito com logo -->
+            <div class="col-md-6 right-panel">
+                
+                <h4 class="mt-3">Bem-vindo de volta!</h4>
+                <img src="../../assets/imgs/login.png" alt="Logo Cantinho Açucarado" class="logo-img" />
+                <p class="mt-2">Acesse sua área administrativa com segurança.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

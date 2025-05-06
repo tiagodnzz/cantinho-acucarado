@@ -1,10 +1,26 @@
 {
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/pages/home/index.html"
+      },
+      {
+        "source": "/admin/**",
+        "destination": "/pages/admin/dashboard.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/pages/admin/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-store"
+          }
+        ]
+      }
     ]
   }
 }

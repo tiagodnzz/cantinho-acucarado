@@ -1,7 +1,8 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
 }
+
+/* Sidebar */
 
 .sidebar {
     width: 260px;
@@ -100,6 +101,10 @@ body {
     margin-left: 80px;
 }
 
+/* Sidebar */
+
+/* Navbar */
+
 .navbar-custom {
     height: 60px;
     background-color: #f8f9fa;
@@ -128,6 +133,23 @@ body {
     object-fit: cover;
 }
 
+/* Navbar */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1035;
+}
+
+.overlay.active {
+    display: block;
+}
+
 /* Responsividade */
 @media (max-width: 767.98px) {
     .sidebar {
@@ -144,18 +166,4 @@ body {
         margin-left: 0 !important;
     }
 
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 1035;
-    }
-
-    .overlay.active {
-        display: block;
-    }
 }

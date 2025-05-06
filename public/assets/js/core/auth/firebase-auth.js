@@ -24,7 +24,7 @@ if (loginForm) { // Executa apenas se o formulário existir na página atual (lo
             .then((userCredential) => {
                 console.log('Login OK:', userCredential.user);
                 // Redireciona para o dashboard na raiz
-                window.location.href = 'dashboard.html';
+                window.location.href = '../admin/dashboard.html';
             })
             .catch((error) => {
                 console.error('Erro no login:', error);
@@ -70,7 +70,7 @@ function adminLogout() { // Renomeando para evitar conflitos potenciais
             console.log('Logout bem-sucedido.');
             // Após o logout, o estado do usuário será null, e o onAuthStateChanged será chamado
             // O que vai redirecionar para a página de login
-            window.location.href = 'login.html'; // Redireciona explicitamente para login
+            window.location.href = '../auth/login.html'; // Redireciona explicitamente para login
         })
         .catch((error) => {
             console.error('Erro no logout:', error);

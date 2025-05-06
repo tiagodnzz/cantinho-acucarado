@@ -7,10 +7,10 @@
     <title>Cantinho Açucarado</title>
 
     <!-- Style css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../assets/css/home.css">
 
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
 
     <!-- Font Awesome 6-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -37,25 +37,24 @@
         crossorigin="anonymous"></script>
 
     <!-- Maps -->
-    <script defer src="js/site/map.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1mddI2EU45s6Ej1qgCUkXmdk6FENm2k&callback=initMap"></script>
+    <script defer src="../../assets/js/modules/location/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1mddI2EU45s6Ej1qgCUkXmdk6FENm2k&callback=initMap"></script>
 
     <!-- Firebase SDKs -->
     <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
 
     <!-- Config Firebase -->
-    <script defer src="js/firebase/firebase-config.js"></script>
+    <script defer src="../../assets/js/core/firebase/firebase-config.js"></script>
 
     <!-- cookies consentimento -->
-    <script defer src="js/site/cookies.js"></script>
+    <script defer src="../../assets/js/core/auth/session.js"></script>
 
     <!-- tracking -->
-    <script defer src="js/site/tracking.js"></script>
+    <script defer src="../../assets/js/modules/analytics/tracking.js"></script>
 
     <!-- Botão do WhatsApp via JS -->
-    <script defer src="js/site/whatsapp.js"></script>
+    <script defer src="../../assets/js/service/whatsapp.js"></script>
 
     <!-- Fancybox JS -->
     <script defer src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
@@ -64,19 +63,19 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- scrollspy -->
-    <script defer src="js/site/scrollspy.js"></script>
+    <script defer src="../../assets/js/ui/scrollspy.js"></script>
 
     <!-- ligthbox -->
-    <script defer src="js/site/ligthbox.js"></script>
+    <script defer src="../../assets/js/modules/gallery/ligthbox.js"></script>
 
     <!-- formulario -->
-    <script defer src="js/site/form-handler.js"></script>
+    <script defer src="../../assets/js/modules/forms/form-handler.js"></script>
 
     <!-- Avaliação -->
-    <script defer src="js/site/rating.js"></script>
+    <script defer src="../../assets/js/ui/rating.js"></script>
 
     <!-- Missao, visao e valores-->
-    <script defer src="js/site/swipper-mvv.js"></script>
+    <script defer src="../../assets/js/ui/swipper-mvv.js"></script>
 
 </head>
 
@@ -86,7 +85,7 @@
         <nav class="navbar navbar-expand-lg bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="assets/imgs/logo.png" alt="Logo" class="logo d-inline-block align-text-top">
+                    <img src="../../assets/imgs/logo.png" alt="Logo" class="logo d-inline-block align-text-top">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,7 +138,7 @@
                     <div class="carousel-item h-100 active" data-bs-interval="10000">
                         <div class="video-wrapper position-relative d-flex align-items-center">
                             <video class="w-100 d-block" autoplay loop muted>
-                                <source src="assets/videos/canjica1.mp4" type="video/mp4" />
+                                <source src="../../assets/videos/canjica2.mp4" type="video/mp4" />
                             </video>
 
                             <!-- Overlay escura com as MESMAS dimensões do vídeo -->
@@ -162,7 +161,7 @@
                     <div class="carousel-item" data-bs-interval="10000">
                         <div class="video-wrapper position-relative d-flex align-items-center">
                             <video class="w-100 h-auto d-block" autoplay loop muted>
-                                <source src="assets/videos/coco.mp4" type="video/mp4" />
+                                <source src="../../assets/videos/coco.mp4" type="video/mp4" />
                             </video>
 
                             <!-- Overlay escura com as MESMAS dimensões do vídeo -->
@@ -184,7 +183,7 @@
                     <div class="carousel-item" data-bs-interval="10000">
                         <div class="video-wrapper position-relative d-flex align-items-center">
                             <video class="w-100 h-auto d-block" autoplay loop muted>
-                                <source src="assets/videos/canjica2.mp4" type="video/mp4" />
+                                <source src="../../assets/videos/canjica1.mp4" type="video/mp4" />
                             </video>
 
                             <!-- Overlay escura com as MESMAS dimensões do vídeo -->
@@ -223,11 +222,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
-                        <img src="assets/imgs/logo-square.png" class="img-fluid logo-square" alt="">
+                        <img src="../../assets/imgs/logo-square.png" class="img-fluid logo-square" alt="">
                     </div>
-                    <div class="col-md-6 d-flex flex-column justify-content-center align-items-start">
+                    <div
+                        class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-start">
                         <h1>Nossa Historia</h1>
-                        <p class="lead justify">A <strong> Cantinho Açucarado </strong> nasceu de um pequeno trabalho da
+                        <p class="lead justify mt-3">A <strong> Cantinho Açucarado </strong> nasceu de um pequeno
+                            trabalho da
                             faculdade que acabou
                             tomando proporções gigantescas. No ano de 2025 era fundada, de forma acadêmica,
                             uma empresa fictícia que iria vender canjica. Suas vendas se destacaram e mesmo
@@ -345,24 +346,24 @@
             <div class="row g-3">
                 <!-- Imagem grande -->
                 <div class="col-md-8">
-                    <a data-fancybox="gallery" href="assets/imgs/1.png" data-caption="Imagem Grande - Montanha">
+                    <a data-fancybox="gallery" href="../../assets/imgs/1.png" data-caption="Imagem Grande - Montanha">
                         <div class="image-wrapper" id="big-image">
-                            <img src="assets/imgs/1.png" alt="Grande" class="w-100">
+                            <img src="../../assets/imgs/1.png" alt="Grande" class="w-100">
                         </div>
                     </a>
                 </div>
 
                 <!-- Coluna com duas imagens menores -->
                 <div class="col-md-4 d-flex flex-column gap-vertical" id="small-images">
-                    <a data-fancybox="gallery" href="assets/imgs/2.png" data-caption="Imagem Menor 1 - Rio">
+                    <a data-fancybox="gallery" href="../../assets/imgs/2.png" data-caption="Imagem Menor 1 - Rio">
                         <div class="image-wrapper small-img">
-                            <img src="assets/imgs/2.png" alt="Menor 1">
+                            <img src="../../assets/imgs/2.png" alt="Menor 1">
                         </div>
                     </a>
 
-                    <a data-fancybox="gallery" href="assets/imgs/2.png" data-caption="Imagem Menor 2 - Floresta">
+                    <a data-fancybox="gallery" href="../../assets/imgs/2.png" data-caption="Imagem Menor 2 - Floresta">
                         <div class="image-wrapper small-img">
-                            <img src="assets/imgs/2.png" alt="Menor 2">
+                            <img src="../../assets/imgs/2.png" alt="Menor 2">
                         </div>
                     </a>
                 </div>
@@ -372,12 +373,16 @@
         <!-- Equipe -->
         <Section class="container mt-5" id="equipe">
             <div class="row">
-                <div class="col-md-4 d-flex flex-column justify-content-center align-items-start mb-3">
-                    <h1>Conheça a Equipe!</h1>
-                    <p>Veja os idealizadores da Cantinho Açucarado</p>
-                    <a href="#contato">
-                        <button class="btn-tipo btn-dark-brown ativo">Fale Conosco</button>
-                    </a>
+                <div
+                    class="col-md-12 col-sm-12 col-lg-4 d-flex flex-column justify-content-center mb-3">
+                    <div class="text-center">
+
+                        <h1>Conheça a Equipe!</h1>
+                        <p>Veja os idealizadores da Cantinho Açucarado</p>
+                        <a href="#contato">
+                            <button class="btn-tipo btn-dark-brown ativo">Fale Conosco</button>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-md-12 col-lg-8">
                     <!-- Grid de Cards -->
@@ -386,7 +391,7 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
+                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
                                     alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Fernando Emanuel</h5>
@@ -411,7 +416,7 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
+                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
                                     alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Jéssica dos Santos</h5>
@@ -436,7 +441,7 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
+                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
                                     alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Lara Brasil</h5>
@@ -461,7 +466,7 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
+                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
                                     alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Talita Kelly</h5>
@@ -486,7 +491,7 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
+                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
                                     alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Viviane Nogueira</h5>
@@ -516,7 +521,7 @@
         <Section class="container mt-5" id="agenda">
             <div class="row rounded bg-dark-beige p-4">
                 <div class="col-md-6">
-                    <img src="assets/imgs/canjica.png" class="img-fluid" alt="Agenda">
+                    <img src="../../assets/imgs/canjica.png" class="img-fluid" alt="Agenda">
                 </div>
                 <div class="col-md-1">
                 </div>
@@ -567,7 +572,7 @@
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <div class="container text-center">
                     <h1>Onde estamos localizados?</h1>
-                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus.</p> -->
+                    <p>Veja nossa localização para provar nossas delicias</p>
                 </div>
                 <!-- Mapa -->
                 <div id="map"></div>
@@ -671,7 +676,7 @@
             <div class="row">
                 <!-- Logo and Creator Info -->
                 <div class="col-lg-6 col-md-12 mb-4 mb-md-0 d-flex flex-column align-items-start">
-                    <img src="assets/imgs/logo.png" alt="Logo" class="logo mb-2">
+                    <img src="../../assets/imgs/logo.png" alt="Logo" class="logo mb-2">
                     <!-- <p>Site desenvolvido por <a href="#" class="text-decoration-none">[Nome da Empresa]</a></p> -->
                 </div>
 
@@ -699,37 +704,37 @@
     </footer>
 
     <!-- Overlay para bloquear a página -->
-    <!-- Overlay para bloquear interação -->
-        <div id="cookie-overlay"></div>
+    <div id="cookie-overlay"></div>
 
-        <div id="cookie-banner" class="fixed-bottom bg-light p-4 text-center z-index-fixed" style="display: none; z-index: 1050;">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <p class="mb-md-0">
-                            <small>Este site usa cookies para melhorar sua experiência de navegação e para fins de
-                                análise. Você permite uso de cookies?</small>
-                        </p>
-                    </div>
-                    <div class="col-md-4 text-md-end">
-                        <button id="reject-cookies-btn" class="btn btn-outline-danger btn-sm">Não Permito</button>
-                        <button id="accept-cookies-btn" class="btn btn-success btn-sm me-2">Sim, Permito</button>
-                    </div>
+    <div id="cookie-banner" class="fixed-bottom bg-light p-4 text-center z-index-fixed"
+        style="display: none; z-index: 1050;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <p class="mb-md-0">
+                        <small>Este site usa cookies para melhorar sua experiência de navegação e para fins de
+                            análise. Você permite uso de cookies?</small>
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button id="reject-cookies-btn" class="btn btn-outline-danger btn-sm">Não Permito</button>
+                    <button id="accept-cookies-btn" class="btn btn-success btn-sm me-2">Sim, Permito</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Notificacao -->
-        <div id="customToast">
-            <div class="toast-content">
-                <i class="toast-icon fa fa-check-circle" id="toastIcon"></i>
-                <span id="toastMessage">Mensagem de sucesso</span>
-                <button class="toast-close" id="toastCloseBtn" aria-label="Fechar">
-                    <i class="fa fa-times"></i>
-                </button>
-            </div>
-            <div class="toast-timer" id="toastTimer"></div>
+    <!-- Notificacao -->
+    <div id="customToast">
+        <div class="toast-content">
+            <i class="toast-icon fa fa-check-circle" id="toastIcon"></i>
+            <span id="toastMessage">Mensagem de sucesso</span>
+            <button class="toast-close" id="toastCloseBtn" aria-label="Fechar">
+                <i class="fa fa-times"></i>
+            </button>
         </div>
+        <div class="toast-timer" id="toastTimer"></div>
+    </div>
 
 </body>
 

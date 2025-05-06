@@ -1,0 +1,51 @@
+body {
+    background-color: #f7f8fc;
+}
+
+.login-card {
+    max-width: 900px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+.left-panel {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.right-panel {
+    background-color: #F4D8A8;
+    color: #402116;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-control {
+    height: 45px;
+}
+
+.btn-login {
+    background-color: #1f2235;
+    color: white;
+}
+
+.logo-img {
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+
+.img-right {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .right-panel {
+        display: none;
+    }
+}
