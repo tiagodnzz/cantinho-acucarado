@@ -16,10 +16,6 @@
         "destination": "/pages/auth/login.html"
       },
       {
-        "source": "/dashboard",
-        "destination": "/pages/admin/dashboard.html"
-      },
-      {
         "source": "**",
         "destination": "/404.html"
       }

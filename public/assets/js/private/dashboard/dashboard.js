@@ -175,6 +175,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const year = now.getFullYear();
         document.getElementById("monthly-title").textContent = `${monthName} ${year}`;
     }
+
+    // Adiciona o event listener para o botão de logout
+    document.addEventListener('click', function(e) {
+        if (e.target && e.target.id === 'logout-button') {
+            e.preventDefault();
+            logout();
+        }
+        // Também verifica se o clique foi em um elemento dentro do botão
+        if (e.target && e.target.parentElement && e.target.parentElement.id === 'logout-button') {
+            e.preventDefault();
+            logout();
+        }
+    });
     
     loadAnalytics(firstDayOfMonth, lastDayOfMonth); // Carrega dados com filtro do mês atual por padrão
     loadMonthlySummary(); // executa a carga dos dados do mês atual

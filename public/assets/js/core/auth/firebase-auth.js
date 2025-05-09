@@ -24,7 +24,7 @@ if (loginForm) { // Executa apenas se o formulário existir na página atual (lo
             .then((userCredential) => {
                 console.log('Login OK:', userCredential.user);
                 // Redireciona para o dashboard na raiz
-                window.location.href = '/dashboard';
+                window.location.href = '/pages/admin/dashboard.html';
             })
             .catch((error) => {
                 console.error('Erro no login:', error);
@@ -41,7 +41,7 @@ auth.onAuthStateChanged((user) => {
     const currentPage = window.location.pathname.split('/').pop();
     // Ajuste os nomes dos arquivos conforme os seus HTMLs na raiz
     const isLoginPage = currentPage === 'login';
-    const isDashboardPage = currentPage === 'dashboard';
+    const isDashboardPage = currentPage === 'pages/admin/dashboard.html';
     const isAdminPage = isLoginPage || isDashboardPage; // Adicione outras páginas admin se houver
 
     console.log(`Auth state: user=${user ? user.uid : null}, page=${currentPage}, isAdmin=${isAdminPage}`);
@@ -51,7 +51,7 @@ auth.onAuthStateChanged((user) => {
         // Se estiver na página de login -> vai pro dashboard
         if (isLoginPage) {
             console.log("Logado, redirecionando do login para o dashboard...");
-            window.location.href = '/dashboard';
+            window.location.href = '/pages/admin/dashboard.html';  
         }
     } else {
         // Usuário NÃO LOGADO
@@ -64,7 +64,7 @@ auth.onAuthStateChanged((user) => {
 });
 
 // --- Função de Logout (será chamada pelo botão em dashboard.html) ---
-function adminLogout() { // Renomeando para evitar conflitos potenciais
+window.logout = function() { // Renomeando para evitar conflitos potenciais
     auth.signOut()
         .then(() => {
             console.log('Logout bem-sucedido.');
@@ -76,3 +76,4 @@ function adminLogout() { // Renomeando para evitar conflitos potenciais
             console.error('Erro no logout:', error);
         });
 }
+
