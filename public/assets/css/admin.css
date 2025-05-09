@@ -62,6 +62,11 @@ body {
     flex-grow: 1;
 }
 
+.sidebar ul.nav li a.active {
+    background-color: #F4D8A8 !important;
+    font-weight: bold !important;
+}
+
 .sidebar ul.nav li a {
     color: #402116;
     padding: 0.75rem 1.25rem;

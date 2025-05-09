@@ -36,11 +36,14 @@
     <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- scripts -->
     <script src="../../assets/js/core/firebase/firebase-config.js" defer></script>
     <script src="../../assets/js/core/auth/firebase-auth.js" defer></script>
+    <script src="../../assets/js/private/dashboard/dashboard.js" defer></script>
+    <script src="../../assets/js/private/layout/load-components.js" defer></script>
     <script src="../../assets/js/private/script.js" defer></script>
-    <script src="../../assets/js/private/dashboard.js" defer></script>
 
     <!-- Autenticação -->
     <script>
@@ -66,8 +69,10 @@
 
     <!-- Conteúdo da dashboard -->
     <div id="app">
+
+        <div id="sidebar-container"></div>
         <!-- Sidebar -->
-        <div class="sidebar d-flex flex-column" id="sidebar">
+        <!-- <div class="sidebar d-flex flex-column" id="sidebar">
             <div class="logo px-3 py-4 text-center">
                 <img src="../../assets/imgs/logo.png" class="logo-expanded img-fluid" alt="Logo Completa" />
                 <img src="../../assets/imgs/logo-square.png" class="logo-collapsed img-fluid" alt="Logo Ícone" />
@@ -83,26 +88,104 @@
                             class="bi bi-box-arrow-right"></i><span>Sair</span></a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <!-- Overlay para mobile -->
         <div class="overlay" id="overlay" onclick="toggleSidebarMobile(false)"></div>
 
         <!-- Main -->
         <div class="main-wrapper" id="mainWrapper">
+            <div id="navbar-container"></div>
             <!-- Navbar -->
-            <div class="navbar-custom">
+            <!-- <div class="navbar-custom">
                 <button class="btn" onclick="toggleSidebar()">
                     <i class="bi bi-list"></i>
                 </button>
                 <img src="../../assets/imgs/user.png" alt="Perfil" class="profile-pic" />
-            </div>
+            </div> -->
 
             <!-- Conteúdo -->
             <div class="content">
-                <h1>Dashboard</h1>
-                <p>Bem-vindo ao seu painel!</p>
+                <div id="monthly-overview">
+                    <h1 class="mb-4" id="monthly-title">Resumo Maio</h1>
+                    <div class="row text-center">
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Visualizações do site</h6>
+                                    <p class="card-text display-3" id="monthly-views">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Cliques no WhatsApp</h6>
+                                    <p class="card-text display-3" id="monthly-whatsapp">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Cliques no Formulário</h6>
+                                    <p class="card-text display-3" id="monthly-contact">0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Visitantes Únicos</h6>
+                                    <p class="card-text display-3" id="monthly-unique">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-4 d-flex align-items-center">
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div class="col-8 d-flex align-items-end justify-content-end gap-3">
+                        <div>
+                            <label for="start-date" class="form-label">Data Início:</label>
+                            <input class="form-control" type="date" id="start-date" name="start-date">
+                        </div>
+                        <div>
+                            <label for="end-date" class="form-label">Data Fim:</label>
+                            <input class="form-control" type="date" id="end-date" name="end-date">
+                        </div>
+                        <div class="d-flex flex-column justify-content-end">
+                            <button class="btn btn-dark" id="apply-filter">Aplicar Filtro</button>
+                        </div>
+                        <div class="d-flex flex-column justify-content-end">
+                            <button class="btn btn-outline-dark" id="reset-filter">Limpar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-5">
+                    <h5>Visualizações no Site por Dia</h5>
+                    <canvas id="viewsChart" height="100"></canvas>
+                </div>
+
+                <div class="my-5">
+                    <h5>Cliques no Botão WhatsApp</h5>
+                    <canvas id="whatsappChart" height="100"></canvas>
+                </div>
+
+                <div class="my-5">
+                    <h5>Cliques no Botão de contato</h5>
+                    <canvas id="contactChart" height="100"></canvas>
+                </div>
+
+                <div class="my-5">
+                    <h5>Visitantes Únicos por Dia</h5>
+                    <canvas id="uniqueUsersChart" height="100"></canvas>
+                </div>
             </div>
+
         </div>
     </div>
 </body>
