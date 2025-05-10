@@ -199,6 +199,10 @@ body {
     font-weight: bold; /* Destaca mensagens não lidas */
 }
 
+#messageContent{
+    background-color: #f8f9fa;
+}
+
 /* Responsividade */
 @media (max-width: 767.98px) {
     .sidebar {
