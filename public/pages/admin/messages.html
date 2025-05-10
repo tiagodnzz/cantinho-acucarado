@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagens</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
+
+    <!-- Loader style -->
+    <style>
+        #loader {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #app {
+            display: none;
+        }
+    </style>
+
+    <!-- Firebase SDKs compat -->
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+    <!-- scripts -->
+    <script src="../../assets/js/core/firebase/firebase-config.js" defer></script>
+    <script src="../../assets/js/core/auth/firebase-auth.js" defer></script>
+    <script src="../../assets/js/private/messages/message.js" defer></script>
+    <script src="../../assets/js/private/layout/load-components.js" defer></script>
+    <script src="../../assets/js/private/script.js" defer></script>
+
+    <!-- Autenticação -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loader = document.getElementById("loader");
+            const app = document.getElementById("app");
+
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    loader.style.display = "none";
+                    app.style.display = "block";
+                } else {
+                    window.location.href = "/pages/auth/login.html";
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="loader">Verificando autenticação...</div>
+
+    <!-- Conteúdo da dashboard -->
+    <div id="app">
+
+        <div id="sidebar-container"></div>
+
+        <!-- Overlay para mobile -->
+        <div class="overlay" id="overlay" onclick="toggleSidebarMobile(false)"></div>
+
+        <!-- Main -->
+        <div class="main-wrapper" id="mainWrapper">
+            <div id="navbar-container"></div>
+
+            <!-- Conteúdo -->
+            <div class="content">
+
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12 border-end">
+                        <h4 class="mb-3">Mensagens</h4>
+                        <div class="mb-3">
+                            <label class="form-label">Filtrar por Status:</label><br>
+                            <button type="button" class="btn btn-outline-dark btn-sm filter-button active"
+                                data-status="pending">Pendentes</button>
+                            <button type="button" class="btn btn-outline-dark btn-sm filter-button ms-2"
+                                data-status="read">Lidas</button>
+                        </div>
+                        <ul id="messageList" class="list-group list-group-flush">
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-8 col-md-12 col-sm-12">
+                        <h4>Detalhes da Mensagem</h4>
+                        <div id="messageContent" class="d-none">
+                            <p><strong>Nome:</strong> <span id="msgName"></span></p>
+                            <p><strong>Email:</strong> <span id="msgEmail"></span></p>
+                            <p><strong>Data:</strong> <span id="msgDate"></span></p>
+                            <p><strong>Mensagem:</strong></p>
+                            <p id="msgText"></p>
+                            <button class="btn btn-success mt-3" id="markAsReadBtn" data-message-id="">
+                                <i class="bi bi-check-circle"></i> Marcar como lida
+                            </button>
+                            <button class="btn btn-danger mt-3 d-none" id="deleteMessageBtn" data-message-id="">
+                                <i class="bi bi-trash"></i> Excluir
+                            </button>
+                        </div>
+                        <div id="noMessage" class="text-muted">Selecione uma mensagem para ver os detalhes.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

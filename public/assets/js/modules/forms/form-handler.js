@@ -99,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             nome,
             email,
             mensagem,
+            status: "pending",
             data: new Date()
         };
 

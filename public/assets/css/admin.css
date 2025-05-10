@@ -155,6 +155,50 @@ body {
     display: block;
 }
 
+#messageList .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#messageList .list-group-item:hover {
+    background-color: #f8f9fa; /* Um cinza claro ao passar o mouse */
+}
+
+#messageList .message-info {
+    flex-grow: 1;
+}
+
+#messageList .message-sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#messageList .message-subject {
+    font-size: 0.9rem;
+    color: #6c757d; /* Cinza mais escuro */
+    overflow: hidden; /* Para evitar que textos longos quebrem o layout */
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+}
+
+#messageList .message-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+    min-width: 80px; /* Garante um espaço mínimo para a data */
+    text-align: right;
+}
+
+#messageList .message-status {
+    margin-left: 10px;
+}
+
+#messageList .unread {
+    font-weight: bold; /* Destaca mensagens não lidas */
+}
+
 /* Responsividade */
 @media (max-width: 767.98px) {
     .sidebar {
