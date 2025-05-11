@@ -11,7 +11,7 @@ var swiperMvv = new Swiper('.swiper-mvv', {
         el: ".swiper-pagination",
         clickable: true,
     },
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20,
     breakpoints: {
         768: { slidesPerView: 2 },   // tablets

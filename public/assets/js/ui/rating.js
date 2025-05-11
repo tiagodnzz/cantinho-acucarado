@@ -4,7 +4,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const cores = ["#007bff", "#6f42c1", "#d63384", "#fd7e14", "#20c997", "#198754"];
 
     try {
-        const snapshot = await db.collection("reviews").orderBy("data", "desc").get();
+        const snapshot = await db.collection("reviews")
+            .where("status", "==", "approved") // Adicionando a condição para status "approved"
+            .orderBy("data", "desc")
+            .get();
+
+        let avaliacoesHtml = ''; // Acumula o HTML das avaliações
 
         snapshot.forEach(doc => {
             const { nome, mensagem, nota } = doc.data();
@@ -22,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <div class="avatar-circle mx-auto mb-2" style="background-color: ${cor}; width: 50px; height: 50px; font-size: 1.2rem;">
                         ${iniciais}
                         </div>
-                        
+
                         <div class="mb-2">
                         ${estrelasHtml}
                         </div>
@@ -32,30 +37,38 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
                 </div>
             `;
-            container.innerHTML += card;
+            avaliacoesHtml += card; // Adiciona o card ao HTML acumulado
         });
 
-        // Inicializa o Swiper
-        new Swiper(".mySwiper", {
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            slidesPerView: 2,
-            spaceBetween: 20,
-            breakpoints: {
-                768: { slidesPerView: 3 },   // tablets
-                992: { slidesPerView: 3 },   // laptops médios
-                1200: { slidesPerView: 4 }   // desktops grandes
-            }
-        });
+        container.innerHTML = avaliacoesHtml; // Define o innerHTML do container após o loop
+
+        // Inicializa o Swiper APENAS se houver avaliações
+        if (snapshot.size > 0) {
+            new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    768: { slidesPerView: 3 },   // tablets
+                    992: { slidesPerView: 3 },   // laptops médios
+                    1200: { slidesPerView: 4 }   // desktops grandes
+                }
+            });
+        } else {
+            // Opcional: Mostrar uma mensagem caso não haja avaliações aprovadas
+            container.innerHTML = '<p class="text-muted text-center">Nenhuma avaliação no momento.</p>';
+        }
 
     } catch (error) {
         console.error("Erro ao buscar avaliações:", error);
+        container.innerHTML = '<p class="text-danger text-center">Erro ao carregar as avaliações.</p>';
     }
 });

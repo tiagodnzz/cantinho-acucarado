@@ -164,7 +164,8 @@ body {
 }
 
 #messageList .list-group-item:hover {
-    background-color: #f8f9fa; /* Um cinza claro ao passar o mouse */
+    background-color: #f8f9fa;
+    /* Um cinza claro ao passar o mouse */
 }
 
 #messageList .message-info {
@@ -178,16 +179,20 @@ body {
 
 #messageList .message-subject {
     font-size: 0.9rem;
-    color: #6c757d; /* Cinza mais escuro */
-    overflow: hidden; /* Para evitar que textos longos quebrem o layout */
+    color: #6c757d;
+    /* Cinza mais escuro */
+    overflow: hidden;
+    /* Para evitar que textos longos quebrem o layout */
     white-space: nowrap;
-    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+    text-overflow: ellipsis;
+    /* Adiciona "..." se o texto for muito longo */
 }
 
 #messageList .message-date {
     font-size: 0.8rem;
     color: #6c757d;
-    min-width: 80px; /* Garante um espaço mínimo para a data */
+    min-width: 80px;
+    /* Garante um espaço mínimo para a data */
     text-align: right;
 }
 
@@ -196,12 +201,58 @@ body {
 }
 
 #messageList .unread {
-    font-weight: bold; /* Destaca mensagens não lidas */
+    font-weight: bold;
+    /* Destaca mensagens não lidas */
 }
 
-#messageContent{
+#messageContent, #ratingDetails {
     background-color: #f8f9fa;
 }
+
+#ratingList .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#ratingList .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+#ratingList .rating-info {
+    flex-grow: 1;
+}
+
+#ratingList .rating-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#ratingList .rating-comment {
+    font-size: 0.9rem;
+    color: #6c757d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#ratingList .rating-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+    min-width: 120px;
+    text-align: right;
+}
+
+#ratingList .pending {
+    font-weight: bold;
+}
+
+#ratingList .approved {
+    color: green;
+}
+
 
 /* Responsividade */
 @media (max-width: 767.98px) {
@@ -217,6 +268,21 @@ body {
 
     .main-wrapper {
         margin-left: 0 !important;
+    }
+
+    #ratingList {
+        margin-bottom: 20px;
+    }
+
+    #ratingList .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #ratingList .rating-date {
+        text-align: left;
+        margin-top: 5px;
+        min-width: auto;
     }
 
 }
