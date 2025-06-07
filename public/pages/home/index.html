@@ -38,7 +38,8 @@
 
     <!-- Maps -->
     <script defer src="/assets/js/modules/location/map.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1mddI2EU45s6Ej1qgCUkXmdk6FENm2k&callback=initMap"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu1mddI2EU45s6Ej1qgCUkXmdk6FENm2k&callback=initMap"></script>
 
     <!-- Firebase SDKs -->
     <script defer src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
@@ -225,7 +226,7 @@
                         <img src="../../assets/imgs/logo-square.png" class="img-fluid logo-square" alt="">
                     </div>
                     <div
-                        class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-start">
+                        class="col-lg-6 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-start px-3">
                         <h1>Nossa Historia</h1>
                         <p class="lead justify mt-3">A <strong> Cantinho Açucarado </strong> nasceu de um pequeno
                             trabalho da
@@ -252,7 +253,7 @@
                                         <i class="bi bi-flag fs-1 text-dark-brown"></i>
                                     </div>
                                     <h3 class="mt-3">Missão</h3>
-                                    <p class="px-3 ">
+                                    <p class="px-3">
                                         <small>Ser referência no ramo alimentício no segmento de canjica, buscando
                                             reconhecimento por meio dos nossos produtos excelentes e sustentáveis.
                                             Procurando sempre estar a frente do mercado atual trazendo novas misturas e
@@ -332,49 +333,68 @@
         </section>
 
         <!-- Produto -->
-        <section class="container" id="produto">
+        <section class="p-2" id="produto">
             <div class="d-flex justify-content-center align-items-center flex-column mb-2">
                 <div class="text-center">
-                    <h1>Nosso Produto</h1>
-                    <p>Confira as fotos das nossas deliciosas canjicas gourmets! Temos cobertura de
-                        amendoim, farofa de paçoca, canela e coco. É só escolher e comer! </p>
-                </div>
-                <a href="#contato">
-                    <button class="btn-tipo btn-dark-brown ativo mb-2">Entre em Contato</button>
-                </a>
-            </div>
-            <div class="row g-3">
-                <!-- Imagem grande -->
-                <div class="col-md-8">
-                    <a data-fancybox="gallery" href="../../assets/imgs/1.png" data-caption="Imagem Grande - Montanha">
-                        <div class="image-wrapper" id="big-image">
-                            <img src="../../assets/imgs/1.png" alt="Grande" class="w-100">
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Coluna com duas imagens menores -->
-                <div class="col-md-4 d-flex flex-column gap-vertical" id="small-images">
-                    <a data-fancybox="gallery" href="../../assets/imgs/2.png" data-caption="Imagem Menor 1 - Rio">
-                        <div class="image-wrapper small-img">
-                            <img src="../../assets/imgs/2.png" alt="Menor 1">
-                        </div>
-                    </a>
-
-                    <a data-fancybox="gallery" href="../../assets/imgs/2.png" data-caption="Imagem Menor 2 - Floresta">
-                        <div class="image-wrapper small-img">
-                            <img src="../../assets/imgs/2.png" alt="Menor 2">
-                        </div>
-                    </a>
+                    <h1 class="title-canjica">Nosso Produto</h1>
                 </div>
             </div>
+            <div class="row">
+
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="row g-3">
+                        <!-- Imagem grande -->
+                        <div class="col-md-8">
+                            <a data-fancybox="gallery" href="../../assets/imgs/product/2.png"
+                                data-caption="Deliciosas Canjicas Gourmet">
+                                <div class="image-wrapper" id="big-image">
+                                    <img src="../../assets/imgs/product/2.png" alt="Grande" class="w-100">
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Coluna com duas imagens menores -->
+                        <div class="col-md-4 d-flex flex-column gap-vertical" id="small-images">
+                            <a data-fancybox="gallery" href="../../assets/imgs/product/1.png"
+                                data-caption="Canjica Gourmet com seus acompanhamentos">
+                                <div class="image-wrapper small-img">
+                                    <img src="../../assets/imgs/product/1.png" alt="Menor 1">
+                                </div>
+                            </a>
+
+                            <a data-fancybox="gallery" href="../../assets/imgs/product/3.png"
+                                data-caption="Deliciosos acompanhamentos">
+                                <div class="image-wrapper small-img">
+                                    <img src="../../assets/imgs/product/3.png" alt="Menor 2">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-12 col-sm-12 bg-dark-brown p-4">
+                    <div class="d-flex justify-content-center align-items-start flex-column mb-2 h-100">
+
+                        <h2 class="title-product">Canjica Gourmet</h2>
+                        <p>Nossas deliciosas canjicas gourmets! Feitas apenas com ingredientes de qualidade, Temos
+                            cobertura de
+                            amendoim, farofa de paçoca, canela e coco.<br> É só escolher e comer! </p>
+                        <p class="fs-4">R$8,00</p>
+
+                        <a href="#contato">
+                            <button class="btn-tipo btn-dark-beige ativo mb-2">Faça seu Pedido</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Equipe -->
         <Section class="container mt-5" id="equipe">
             <div class="row">
-                <div
-                    class="col-md-12 col-sm-12 col-lg-4 d-flex flex-column justify-content-center mb-3">
+                <div class="col-md-12 col-sm-12 col-lg-4 d-flex flex-column justify-content-center mb-3">
                     <div class="text-center">
 
                         <h1>Conheça a Equipe!</h1>
@@ -391,11 +411,10 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
-                                    alt="User Image">
+                                <img src="../../assets/imgs/team/fernando.jpeg"
+                                    class="rounded-circle mx-auto d-block person" alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Fernando Emanuel</h5>
-                                    <p class="card-text text-center">Função</p>
                                     <div class="d-flex justify-content-center gap-1">
                                         <a href="https://www.facebook.com/share/12J16ny5EfQ/" target="_blank"
                                             class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -416,11 +435,10 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
-                                    alt="User Image">
+                                <img src="../../assets/imgs/team/jessica.jpeg"
+                                    class="rounded-circle mx-auto d-block person" alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Jéssica dos Santos</h5>
-                                    <p class="card-text text-center">Função</p>
                                     <div class="d-flex justify-content-center gap-1">
                                         <a href="https://www.facebook.com/share/1BYh1Fcknq/" target="_blank"
                                             class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -441,11 +459,10 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
-                                    alt="User Image">
+                                <img src="../../assets/imgs/team/lara.jpeg"
+                                    class="rounded-circle mx-auto d-block person" alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Lara Brasil</h5>
-                                    <p class="card-text text-center">Função</p>
                                     <div class="d-flex justify-content-center gap-1">
                                         <a href="https://www.facebook.com/share/1Aa4ePEGHm/" target="_blank"
                                             class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -466,11 +483,10 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
-                                    alt="User Image">
+                                <img src="../../assets/imgs/team/tali.jpeg"
+                                    class="rounded-circle mx-auto d-block person" alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Talita Kelly</h5>
-                                    <p class="card-text text-center">Função</p>
                                     <div class="d-flex justify-content-center gap-1">
                                         <a href="https://www.facebook.com/share/191wu3p22E/" target="_blank"
                                             class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -491,11 +507,10 @@
                         <!-- Card -->
                         <div class="col">
                             <div class="card p-3">
-                                <img src="../../assets/imgs/user.png" class="rounded-circle mx-auto d-block person"
-                                    alt="User Image">
+                                <img src="../../assets/imgs/team/vivi.jpeg"
+                                    class="rounded-circle mx-auto d-block person" alt="User Image">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">Viviane Nogueira</h5>
-                                    <p class="card-text text-center">Função</p>
                                     <div class="d-flex justify-content-center gap-1">
                                         <a href="https://www.facebook.com/share/1AduiP7rg1/" target="_blank"
                                             class="btn btn-outline-primary btn-sm rounded-circle d-flex align-items-center justify-content-center"
@@ -582,10 +597,48 @@
         <!-- Contato -->
         <Section class="container mt-5" id="contato">
             <div class="row">
-                <div class="col-md-6 d-flex flex-column justify-content-center align-items-start mb-2">
+                <div class="col-md-6 d-flex flex-column justify-content-center align-items-start mb-5">
                     <h1>Fale Conosco</h1>
                     <p>Precisa falar conosco? Entre em contato e mande uma mensagem, teremos prazer
                         em respondê-lo!</p>
+                    <p class="text-muted mb-3">
+                        Acompanhe tambem nossas novidades, promoções e delícias fresquinhas direto do nosso perfil!
+                    </p>
+                    <!-- Botão para abrir modal -->
+                    <button type="button" class="btn btn-outline-instagram d-flex align-items-center gap-2 px-3 py-2"
+                        data-bs-toggle="modal" data-bs-target="#instagramModal"
+                        style="color: #E1306C; border: 1px solid #E1306C; border-radius: 25px; font-weight: 600; background-color: transparent;">
+
+                        <!-- Ícone SVG Instagram -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#E1306C"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.375 2.125a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" />
+                        </svg>
+                        Ver Instagram
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="instagramModal" tabindex="-1" aria-labelledby="instagramModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="instagramModalLabel">Instagram Cantinho Açucarado</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Fechar"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="ratio ratio-1x1" style="min-height: 400px;">
+                                        <iframe src="https://www.instagram.com/cantinho_acucaradooficial/embed"
+                                            allowtransparency="true" scrolling="no" allowfullscreen="true"
+                                            frameborder="0" loading="lazy"
+                                            style="border-radius: 0 0 12px 12px;"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-6">
@@ -693,6 +746,7 @@
                     <!-- <a href="#" class="dark-brown me-3">
                         <i class="fa-brands fa-twitter fa-lg"></i>
                     </a> -->
+
                 </div>
             </div>
         </div>

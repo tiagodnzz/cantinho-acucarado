@@ -292,6 +292,63 @@ section {
     justify-content: center;
 }
 
+.title-canjica {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 30px;
+    /* espaço para as linhas */
+}
+
+.title-canjica::before,
+.title-canjica::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    /* pode trocar a cor aqui */
+    border-radius: 2px;
+}
+
+.title-canjica::before {
+    bottom: 14px;
+    /* maior linha em cima */
+    width: 80%;
+    height: 6px;
+    background-color: #734e3a;
+}
+
+.title-canjica::after {
+    bottom: 0;
+    /* menor linha embaixo */
+    width: 60%;
+    height: 6px;
+    background-color: #ba865b;
+}
+
+.title-product {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+    /* espaço para o risco */
+}
+
+.title-product::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    /* você escolhe a largura */
+    height: 4px;
+    /* você escolhe a grossura */
+    background-color: #ba865b;
+    /* exemplo: verde limão */
+    border-radius: 2px;
+}
+
+
 /* Notificacao */
 /* Toast container */
 #customToast {
@@ -469,6 +526,14 @@ button.disabled {
 .min-height-100 {
     min-height: 100vh !important;
 }
+
+  .btn-outline-instagram:hover {
+    background-color: #E1306C !important;
+    color: white !important;
+  }
+  .btn-outline-instagram:hover svg {
+    fill: white;
+  }
 
 /* Animação da barra */
 @keyframes shrinkTimer {
