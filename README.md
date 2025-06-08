@@ -90,6 +90,24 @@ firebase.json    # Configuração do Firebase Hosting
 - O site é totalmente estático, hospedado no Firebase Hosting.
 - As rotas amigáveis são gerenciadas pelo `firebase.json` usando rewrites.
 
+## Deploy Automático (CI/CD)
+
+Este projeto utiliza **GitHub Actions** para realizar o deploy automático no Firebase Hosting sempre que há um push na branch `main` ou quando é aberto um Pull Request.
+
+- Ao fazer um **push** na branch `main`, o workflow `.github/workflows/firebase-hosting-merge.yml` é executado e publica automaticamente o site em produção no Firebase Hosting.
+- Ao abrir um **Pull Request**, o workflow `.github/workflows/firebase-hosting-pull-request.yml` gera uma prévia do site para revisão.
+
+Os arquivos de configuração dos pipelines estão em:
+- [.github/workflows/firebase-hosting-merge.yml](.github/workflows/firebase-hosting-merge.yml)
+- [.github/workflows/firebase-hosting-pull-request.yml](.github/workflows/firebase-hosting-pull-request.yml)
+
+**Resumo do fluxo:**
+1. O código é enviado para o GitHub.
+2. O GitHub Actions executa o deploy automático no Firebase Hosting.
+3. O site é atualizado automaticamente sem necessidade de comandos manuais.
+
+Para mais detalhes, consulte a documentação do [Firebase Hosting CI/CD](https://firebase.google.com/docs/hosting/github-integration).
+
 ## Funcionalidades
 
 O projeto Cantinho Açucarado oferece as seguintes funcionalidades:
